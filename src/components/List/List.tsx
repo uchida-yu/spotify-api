@@ -22,7 +22,13 @@ const List = () => {
     <div className={AppStyle.list}>
       {list?.albums?.items && list?.albums?.items.length > 0
         ? list?.albums.items.map((item) => (
-            <a className={AppStyle.list__item} key={item.id} href={item.href} target="_blank" rel="noreferrer">
+            <a
+              className={AppStyle.list__item}
+              key={item.id}
+              href={item.external_urls.spotify}
+              target="_blank"
+              rel="noreferrer"
+            >
               <img className={AppStyle['list__item-img']} src={item.images[0]?.url} alt="" />
               <div className={AppStyle['list__item-info']}>
                 {item.name}
